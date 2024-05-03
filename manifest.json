@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "트래픽 증가",
+  "version": "0.0.0.3",
+  "description": "해당 웹사이트 트래픽을 증가시킵니다.",
+  "permissions": ["webNavigation", "scripting"],
+  "host_permissions": ["*://*.smartstore.naver.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.smartstore.naver.com/golfspot_official/products/6063896626"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
